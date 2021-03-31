@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ 
+
+    ViewBag.Title = "Employment Application";
+}
+
+<h2>Employment Applications</h2>
+
+<table class="table table-hover">
+     
+
+        <thead>
+            <tr class="success">
+                <th colspan="1">First Name</th>
+                <th colspan="1">Last Name</th>
+                <th colspan="1">Email Address</th>
+                <th colspan="1">Phone Number</th>
+                <th colspan="1">Date of Birth</th>
+                <th colspan="1">Application Date</th>
+            </tr>
+
+        </thead>
+    
+        <tbody>
+            @for (int i = 0; i < ViewBag.EmpApplications.Count; i++)
+             {
+
+                <tr>
+                    <td><div>@ViewBag.EmpApplications[i].FirstName</div></td>
+                    <td><div>@ViewBag.EmpApplications[i].LastName</div></td>
+                    <td><div>@ViewBag.EmpApplications[i].EmailAddress</div></td>
+                    <td><div>@ViewBag.EmpApplications[i].PhoneNumber</div></td>
+                    <td><div>@ViewBag.EmpApplications[i].DateOfBirth</div></td>
+                    <td><div>@ViewBag.EmpApplications[i].CreatedDate</div></td>
+                    <td><div>@Html.ActionLink("Edit", "Edit", new { id = @ViewBag.EmpApplications[i].ApplicationId})</div></td>
+                </tr>
+            
+             }
+            
+        </tbody>
+      
+</table>
+        
+   
+        
+
+
+    
+
+
+
